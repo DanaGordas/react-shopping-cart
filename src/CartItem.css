@@ -1,17 +1,21 @@
 .CartItem {
-    margin-top: 2em;
+    font-size: 15px;
+    padding-top: 32px;
+    padding-bottom: 32px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(35, 34, 38, 0.2);
+    opacity: 0.9;
 }
 
-.CartItem div {
-    width: 25%;
+.CartItem-details div {
+    padding-bottom: 1rem;
 }
 
 .CartItem button {
     width: 20px;
     height: 20px;
-    background-color: #e1e8ee;
+    background-color: #AABCBF;;
     border-radius: 6px;
     margin: 0 3px;
     border: none;
@@ -23,9 +27,15 @@
     opacity: 1;
 }
 
+.CartItem img {
+    width: 100px;
+    height: 100px;
+}
+
 .CartItem button:disabled {
     background-color: #f8f9fa;
     opacity: 1;
+    cursor: default;
 }
 
 .CartItem-remove {

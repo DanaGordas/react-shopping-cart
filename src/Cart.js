@@ -7,9 +7,9 @@ function Cart({ initialItems }){
     const initialState = JSON.parse(window.localStorage.getItem('items'));
     const [ items, setItems] = useState(initialState || initialItems);
 
-    useEffect(() => {
-        window.localStorage.setItem('items', JSON.stringify(items));
-    }, [items]);
+    // useEffect(() => {
+    //     window.localStorage.setItem('items', JSON.stringify(items));
+    // }, [items]);
     
     const updateQty = (id, newQty) => {
         const newItems = items.map(item => {
@@ -32,14 +32,24 @@ function Cart({ initialItems }){
     
     return(
         <div className="Cart">
-            <h4 className="Cart-title">My Cart</h4>
-            <div className="Cart-items">
-                {items.map(item => (
-                    <CartItem key={item.id} {...item} updateQty={updateQty} handleRemove={handleRemove}/>
-                ))}
+            <div className="Cart-list">
+                <h4 className="Cart-title">My Cart</h4>
+                <div className="Cart-items">
+                    {items.map(item => (
+                        <CartItem key={item.id} {...item} updateQty={updateQty} handleRemove={handleRemove}/>
+                    ))}
+                </div>
             </div>
-            <h4 className="Cart-total">Total: ${grandTotal} </h4>
-        </div>
+            <div>
+                <h4 className="Cart-title">Order Summary</h4>
+                <div className="Cart-summary">
+                    <div className="Cart-total">Subtotal: <span>${grandTotal}</span> </div>
+                    <div>Shipping: <span>FREE</span></div>
+                    <div className="Cart-total">Total: <span>${grandTotal}</span> </div>
+                </div>
+                <button className="Cart-btn">Checkout</button>
+            </div>
+        </div>  
     )  
 }
 

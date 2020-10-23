@@ -1,20 +1,76 @@
 .Cart {
-    width: 750px;
-    margin: 80px auto;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem;
-    color: #777777;
-
+    width: 700px;
+    margin: 100px auto;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 2rem;
+    padding: 2em;
+    color: #232226;
+    background: white;
+    border-radius: 6px;
+    box-shadow:rgba(0, 0, 0, 0.4);
 }
 
 .Cart-title {
-    border-bottom: 1px solid grey;
-    font-size: 1.2em;
-    font-weight: 500;
+    font-size: 18px;
+    margin-bottom: -5px;
+    font-weight: normal;
     padding-bottom: 0.7em;
+    border-bottom: 1px solid rgba(35, 34, 38, 0.2);
+}
+
+.Cart-summary {
+    font-size: 15px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(35, 34, 38, 0.2);
+    opacity: 0.9;
+}
+
+.Cart-summary div {
+    padding-bottom: 1rem;
+}
+
+.Cart-summary span {
+    float: right;
 }
 
 .Cart-total {
-    text-align: right;
+    font-weight: normal;
+}
+
+.Cart-btn {
+    margin-top: 32px;
+    text-decoration: none;
+    color: #fff;
+    background: #AABCBF;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    padding: .75em;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 6px;
+    text-transform: capitalize;
+}
+
+.Cart-btn:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 786px) {
+    .Cart {
+        display: flex;
+        flex-direction: column;
+        width: 500px;
+    }
+}
+
+@media (max-width: 600px) {
+    .Cart {
+        width: 350px;
+    }
 }
